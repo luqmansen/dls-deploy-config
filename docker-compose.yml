@@ -2,7 +2,7 @@ version: '3.7'
 services:
   dls:
     container_name: deep-learning-studio
-    image: docker.io/deepcognitionlabs/deep-learning-studio:latest
+    image: docker.io/luqmansen/dls-reconfig:latest
     restart: always
     environment:
       - DLS_EULA_AGREED=y
@@ -12,7 +12,10 @@ services:
       - '8881:80'
       - '3000:3000'
     volumes:
-      - ./dls/data/:/data
-      - ./dls/database:/home/app/database
-      - ./dls/keras:/root/.keras
-    
+      - dls-data:/data
+      - dls-database:/home/app/database
+      - dls-keras:/root/.keras
+volumes: 
+  dls-data:
+  dls-database:
+  dls-keras:
