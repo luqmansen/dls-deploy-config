@@ -10,7 +10,9 @@ services:
       - '8888:8888' 
       - '8889:8889' 
       - '8880:8880'
+      - '5000:5000'
       - '8881:80'
+      - '8882:80'
     volumes:
       - dls-data:/data
       - dls-database:/home/app/database
