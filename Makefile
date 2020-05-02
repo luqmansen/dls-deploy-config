@@ -7,6 +7,11 @@ backup:
   	-v dls-keras:/source:ro \
   	busybox tar -czC /source . >dls-keras-backup.tar.gz
 
+	docker run --rm \
+        -v dls-data:/source:ro \
+        busybox tar -czC /source . >dls-data-backup.tar.gz
+
+
 
 restore:
 	docker run --rm -i \
